@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://preview_panel.gd" type="Script" id=1]
+[ext_resource path="res://samples/png/png24-s.png" type="Texture" id=2]
+[ext_resource path="res://palette.tscn" type="PackedScene" id=3]
+
+[node name="preview_panel" type="GridContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 3
+script = ExtResource( 1 )
+texture = ExtResource( 2 )
+
+[node name="original" type="TextureRect" parent="."]
+margin_bottom = 256.0
+
+[node name="preview" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 256.0
+
+[node name="palette" parent="." instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 264.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0

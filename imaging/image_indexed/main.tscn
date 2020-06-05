@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://samples/png/png24.png" type="Texture" id=4]
+[ext_resource path="res://preview_panel.tscn" type="PackedScene" id=5]
+
+[node name="main" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 16
+script = ExtResource( 1 )
+populate_from_textures = false
+textures = [ ExtResource( 4 ), ExtResource( 3 ) ]
+
+[node name="test" parent="." instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 256.0
+
+[node name="palette" parent="test" index="2"]
+num_colors = 32
+[connection signal="palette_applied" from="test/palette" to="test" method="_on_palette_applied"]
+
+[editable path="test"]
