@@ -21,10 +21,8 @@ The default branch is compatible with the latest stable Godot version.
 If you are using an older (or future) version of Godot, use the appropriate
 branch for your Godot version:
 
-- [`gd3`](https://github.com/GoostGD/goost/tree/3.1) branch
-for Godot 3.x.
-- [`gd4`](https://github.com/GoostGD/goost/tree/3.0) branch
-for Godot 4.x.
+- [`gd3`](https://github.com/GoostGD/goost-examples/tree/gd3) for Godot 3.x.
+- [`gd4`](https://github.com/GoostGD/goost-examples/tree/gd4) for Godot 4.x.
 
 ## Useful links
 
