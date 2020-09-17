@@ -46,6 +46,13 @@ func test_array_push_front():
 		array.push_front("Godot")
 
 
+func test_array_resize_set():
+	var array = Array()
+	array.resize(ELEMENT_COUNT)
+	for i in ELEMENT_COUNT:
+		array[i] = "Godot"
+
+
 func test_list_push_back():
 	var list = LinkedList.new()
 	for i in ELEMENT_COUNT:
