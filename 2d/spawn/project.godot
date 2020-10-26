@@ -1,0 +1,17 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Goost Spawn"
+run/main_scene="res://circle_spawn.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
+config/icon="res://icon.png"
