@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://geometry.gd" type="Script" id=1]
 [ext_resource path="res://scenes/decomp_holes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/rand_triangle_points.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/rand_polygon_points.tscn" type="PackedScene" id=4]
 
 [node name="geometry" type="Node2D"]
 script = ExtResource( 1 )
-scenes = [ ExtResource( 2 ) ]
+scenes = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ]
 
 [node name="ui" type="CanvasLayer" parent="."]
 
 [node name="scenes" type="HBoxContainer" parent="ui"]
+margin_top = 41.0
 margin_right = 204.0
-margin_bottom = 40.0
+margin_bottom = 81.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -30,5 +33,6 @@ rect_min_size = Vector2( 100, 0 )
 text = "Next >"
 
 [node name="scene" type="Node2D" parent="."]
+
 [connection signal="pressed" from="ui/scenes/previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="ui/scenes/next" to="." method="_on_next_pressed"]
