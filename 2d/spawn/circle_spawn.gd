@@ -53,7 +53,7 @@ func spawn():
 		var point = Vector2()
 		match type:
 			Type.CIRCLE:
-				point = GoostGeometry2D.rand_point_in_circle(max_radius)
+				point = Random2D.point_in_circle(0, max_radius)
 			Type.RING:
-				point = GoostGeometry2D.rand_point_in_ring(min_radius, max_radius)
+				point = Random2D.point_in_circle(min_radius, max_radius)
 		goost.global_position = point

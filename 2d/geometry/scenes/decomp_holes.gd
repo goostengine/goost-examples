@@ -12,7 +12,7 @@ func _process(_delta):
 	var brush = GoostGeometry2D.regular_polygon(16, SIZE / 2)
 	brush = Transform2D(0, pos).xform(brush)
 	var polys = GoostGeometry2D.clip_polygons(subject, brush)
-	solution = GoostGeometry2D.decompose_multiple_polygons_into_convex(polys)
+	solution = PolyDecomp2D.decompose_polygons_into_convex(polys)
 	update()
 
 
