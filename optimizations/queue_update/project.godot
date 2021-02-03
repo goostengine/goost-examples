@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "CustomResource",
+"language": "GDScript",
+"path": "res://custom_resource.gd"
+} ]
+_global_script_class_icons={
+"CustomResource": ""
+}
+
+[application]
+
+config/name="Queue update"
+run/main_scene="res://main.tscn"
+boot_splash/fullsize=false
+config/icon="res://icon.png"
+
+[node]
+
+name_num_separator=2
+name_casing=2
+
+[rendering]
+
+environment/default_clear_color=Color( 0.239216, 0.239216, 0.239216, 1 )
