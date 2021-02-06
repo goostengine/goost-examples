@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Invoke"
+run/main_scene="res://main.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
+config/icon="res://icon.png"
+
+[node]
+
+name_num_separator=2
+name_casing=2
+
+[rendering]
+
+environment/default_clear_color=Color( 0.239216, 0.239216, 0.239216, 1 )
