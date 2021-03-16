@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 1.0
+
+[sub_resource type="Animation" id=1]
+resource_name = "deform"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Right:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bottom:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Top:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, false, true ]
+}
+
+[node name="Asteroid" type="RigidBody2D"]
+position = Vector2( 308.839, 172.461 )
+physics_material_override = SubResource( 2 )
+custom_integrator = true
+can_sleep = false
+
+[node name="PolyCollisionShape2D" type="PolyCollisionShape2D" parent="."]
+
+[node name="PolyCircle2D" type="PolyCircle2D" parent="PolyCollisionShape2D"]
+texture = ExtResource( 1 )
+texture_offset = Vector2( 32, 32 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PolyCollisionShape2D/PolyCircle2D"]
+autoplay = "deform"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/deform = SubResource( 1 )
+
+[node name="Right" type="PolyCircle2D" parent="PolyCollisionShape2D/PolyCircle2D"]
+position = Vector2( 32, 0 )
+operation = 2
+
+[node name="Bottom" type="PolyCircle2D" parent="PolyCollisionShape2D/PolyCircle2D"]
+visible = false
+position = Vector2( 0, 32 )
+operation = 2
+
+[node name="Left" type="PolyCircle2D" parent="PolyCollisionShape2D/PolyCircle2D"]
+visible = false
+position = Vector2( -32, 0 )
+operation = 2
+
+[node name="Top" type="PolyCircle2D" parent="PolyCollisionShape2D/PolyCircle2D"]
+visible = false
+position = Vector2( 0, -32 )
+operation = 2
