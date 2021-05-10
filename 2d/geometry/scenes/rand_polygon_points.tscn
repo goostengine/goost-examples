@@ -14,6 +14,3 @@ text = "Hover over the cloud."
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="camera" type="Camera2D" parent="."]
-current = true

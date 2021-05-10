@@ -28,7 +28,9 @@ func _on_next_pressed():
 
 
 func create_from_scene(p_scene):
+	$camera.current = false
 	for node in $scene.get_children():
 		node.queue_free()
 	var demo = p_scene.instance()
 	$scene.add_child(demo)
+	$camera.current = true

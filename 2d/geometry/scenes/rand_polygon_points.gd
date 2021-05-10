@@ -9,12 +9,8 @@ var subject = Transform2D(0, Vector2.ZERO).scaled(Vector2.ONE * SIZE).xform(BASE
 var polygons = []
 
 
-func _init():
-	Random2D.randomize()
-
-
 func _process(_delta):
-		randomize_points()
+	randomize_points()
 
 
 func randomize_points():

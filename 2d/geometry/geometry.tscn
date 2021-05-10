@@ -1,38 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://geometry.gd" type="Script" id=1]
 [ext_resource path="res://scenes/decomp_holes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/rand_triangle_points.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/rand_polygon_points.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/smooth_poly.tscn" type="PackedScene" id=5]
 
 [node name="geometry" type="Node2D"]
 script = ExtResource( 1 )
-scenes = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ]
+scenes = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ]
 
 [node name="ui" type="CanvasLayer" parent="."]
 
-[node name="scenes" type="HBoxContainer" parent="ui"]
-margin_top = 41.0
-margin_right = 204.0
-margin_bottom = 81.0
+[node name="vbox" type="VBoxContainer" parent="ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="previous" type="Button" parent="ui/scenes"]
-margin_right = 100.0
-margin_bottom = 40.0
+[node name="scenes" type="HBoxContainer" parent="ui/vbox"]
+margin_right = 1024.0
+margin_bottom = 20.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="previous" type="Button" parent="ui/vbox/scenes"]
+margin_left = 820.0
+margin_right = 920.0
+margin_bottom = 20.0
 rect_min_size = Vector2( 100, 0 )
 text = "< Previous"
 
-[node name="next" type="Button" parent="ui/scenes"]
-margin_left = 104.0
-margin_right = 204.0
-margin_bottom = 40.0
+[node name="next" type="Button" parent="ui/vbox/scenes"]
+margin_left = 924.0
+margin_right = 1024.0
+margin_bottom = 20.0
 rect_min_size = Vector2( 100, 0 )
 text = "Next >"
 
 [node name="scene" type="Node2D" parent="."]
 
-[connection signal="pressed" from="ui/scenes/previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="ui/scenes/next" to="." method="_on_next_pressed"]
+[node name="camera" type="Camera2D" parent="."]
+current = true
+
+[connection signal="pressed" from="ui/vbox/scenes/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="ui/vbox/scenes/next" to="." method="_on_next_pressed"]

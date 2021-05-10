@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/smooth_poly.gd" type="Script" id=1]
+
+[node name="smooth_poly" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="instructions" type="Label" parent="ui"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Click on the canvas to place points.
+Press F1 or F2 to switch between approximation and interpolation.
+Press F3 to switch between polyline and polygon modes.
+Use mouse wheel to control the Catmull-Rom spline alpha value,
+or hold P button to control the number of points (interpolate only)."
+__meta__ = {
+"_edit_use_anchors_": false
+}
