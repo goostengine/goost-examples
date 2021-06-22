@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://plot.gd" type="Script" id=1]
+
+[node name="plot" type="GridRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+divisions_line_width = 3.0
+origin_centered = true
+origin_axes_visible = true
+origin_axes_line_width = 5.0
+custom_colors/line_cell = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/line_division = Color( 0.85098, 0.85098, 0.85098, 1 )
+custom_colors/line_axis_x = Color( 0.913725, 0, 0, 1 )
+custom_colors/line_axis_y = Color( 0, 0.552941, 1, 1 )
+custom_colors/background = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="point_clicked" from="." to="." method="_on_point_clicked"]
