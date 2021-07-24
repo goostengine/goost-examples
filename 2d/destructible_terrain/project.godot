@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Bomb",
+"language": "GDScript",
+"path": "res://bomb.gd"
+} ]
+_global_script_class_icons={
+"Bomb": ""
+}
+
+[application]
+
+config/name="Goost: Destructible Terrain"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.png"
+
+[debug]
+
+gdscript/warnings/enable=false
+
+[physics]
+
+2d/default_gravity=980
+
+[rendering]
+
+environment/default_clear_color=Color( 0.121569, 0.121569, 0.121569, 1 )

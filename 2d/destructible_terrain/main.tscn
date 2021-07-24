@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Terrain" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape" type="PolyCollisionShape2D" parent="Terrain"]
+build_mode = 1
+
+[node name="Boundary" type="PolyNode2D" parent="Terrain/CollisionShape"]
+points = PoolVector2Array( 24, 344, 76, 261, 130, 287, 138, 165, 250, 178, 280, 105, 391, 115, 417, 172, 496, 61, 650, 105, 706, 179, 826, 128, 866, 199, 944, 281, 960, 344 )
+color = Color( 0.858824, 0.74902, 0.313726, 1 )
+
+[node name="Explosion1" type="PolyCircle2D" parent="Terrain/CollisionShape/Boundary"]
+position = Vector2( 577, 106 )
+operation = 2
+radius = 64.0
+__meta__ = {
+"_editor_description_": "You can turn visibility of this node on and off to enable or disable destruction."
+}
+
+[node name="Explosion2" type="PolyCircle2D" parent="Terrain/CollisionShape/Boundary"]
+position = Vector2( 604, 177 )
+operation = 2
+__meta__ = {
+"_editor_description_": "You can turn visibility of this node on and off to enable or disable destruction."
+}
+
+[node name="Explosion3" type="PolyCircle2D" parent="Terrain/CollisionShape/Boundary"]
+position = Vector2( 472, 118 )
+operation = 2
+__meta__ = {
+"_editor_description_": "You can turn visibility of this node on and off to enable or disable destruction."
+}
+
+[node name="Explosion4" type="PolyCircle2D" parent="Terrain/CollisionShape/Boundary"]
+position = Vector2( 244, 83 )
+operation = 2
+radius = 128.0
+__meta__ = {
+"_editor_description_": "You can turn visibility of this node on and off to enable or disable destruction."
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Info" type="Label" parent="UI"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 201.0
+margin_bottom = 20.0
+text = "Left-click to drop a fuse bomb."
+__meta__ = {
+"_edit_use_anchors_": false
+}
