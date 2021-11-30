@@ -1,0 +1,13 @@
+[remap]
+
+importer="midifile"
+type="MidiFile"
+path="res://.import/piano.sf2-d97f43da2c0f129e6ae7dba57c424edf.mdf"
+
+[deps]
+
+source_file="res://piano.sf2"
+dest_files=[ "res://.import/piano.sf2-d97f43da2c0f129e6ae7dba57c424edf.mdf" ]
+
+[params]
+

@@ -30,8 +30,8 @@ branch for your Godot version:
 
 ## License
 
-The examples are distributed under the terms of the MIT license, as described in
-the [LICENSE.md](LICENSE.md) file.
+Unless otherwise specified, the examples are distributed under the terms of the
+MIT license, as described in the [LICENSE.md](LICENSE.md) file.
 
 ## Attribution
 

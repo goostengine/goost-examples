@@ -1,0 +1,13 @@
+[remap]
+
+importer="midifile"
+type="MidiFile"
+path="res://.import/moonlight.mid-8e1adb94e1f863fe7ca5ef1dbe98d7fd.mdf"
+
+[deps]
+
+source_file="res://moonlight.mid"
+dest_files=[ "res://.import/moonlight.mid-8e1adb94e1f863fe7ca5ef1dbe98d7fd.mdf" ]
+
+[params]
+
