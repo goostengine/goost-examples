@@ -2,11 +2,11 @@
 
 [sub_resource type="AudioEffectReverb" id=1]
 resource_name = "Reverb"
-room_size = 0.3
+room_size = 0.4
 spread = 0.25
-wet = 0.25
+wet = 0.4
 
 [resource]
-bus/0/volume_db = -10.5236
+bus/0/volume_db = -13.5162
 bus/0/effect/0/effect = SubResource( 1 )
 bus/0/effect/0/enabled = true
