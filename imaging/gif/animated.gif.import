@@ -1,0 +1,19 @@
+[remap]
+
+importer="animated_texture"
+type="AnimatedTexture"
+path="res://.import/animated.gif-1edac1b6bcfe83a8b25a85f957e2118a.atex"
+
+[deps]
+
+source_file="res://animated.gif"
+dest_files=[ "res://.import/animated.gif-1edac1b6bcfe83a8b25a85f957e2118a.atex" ]
+
+[params]
+
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=0
+max_frames=0

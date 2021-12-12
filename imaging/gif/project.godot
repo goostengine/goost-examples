@@ -11,5 +11,5 @@ config_version=4
 [application]
 
 config/name="Goost GIF export example"
-run/main_scene="res://main.tscn"
+run/main_scene="res://save.tscn"
 config/icon="res://icon.png"
