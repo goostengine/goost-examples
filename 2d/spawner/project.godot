@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Goost Node Spawner"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.png"
+
+[debug]
+
+gdscript/warnings/enable=false
+shapes/navigation/geometry_color=Color( 0.101961, 1, 0.701961, 0.4 )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+2d/default_gravity=980
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

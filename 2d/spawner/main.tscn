@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://coin/coin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://explosion/explosion.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "motion"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spawner2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -170, -91 ), Vector2( 226, -91 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spawner2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Spawner2D" type="Spawner2D" parent="."]
+position = Vector2( -170, -91 )
+z_index = 1
+resource = ExtResource( 2 )
+rate = 10
+limit = 40
+delay = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="PolyCollisionShape2D" type="PolyCollisionShape2D" parent="StaticBody2D"]
+
+[node name="Boundary" type="PolyNode2D" parent="StaticBody2D/PolyCollisionShape2D"]
+position = Vector2( 1, 2 )
+points = PoolVector2Array( -305, -175, -228, 225, 276, 198, 396, -172 )
+color = Color( 0.0509804, 0.517647, 0.564706, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hole" type="PolyNode2D" parent="StaticBody2D/PolyCollisionShape2D/Boundary"]
+position = Vector2( -1, -2 )
+rotation = 6.28318
+scale = Vector2( 0.7, 0.7 )
+points = PoolVector2Array( -305, -175, -228.571, 124.286, 247.143, 207.143, 396, -172 )
+operation = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ExplosionSequence" type="Node2D" parent="."]
+position = Vector2( 1, 199 )
+
+[node name="1" type="Spawner2D" parent="ExplosionSequence"]
+resource = ExtResource( 3 )
+spawn_path = NodePath("../../StaticBody2D/PolyCollisionShape2D/Boundary")
+limit = 1
+delay = 1.0
+
+[node name="2" type="Spawner2D" parent="ExplosionSequence"]
+position = Vector2( 0, -32 )
+resource = ExtResource( 3 )
+spawn_path = NodePath("../../StaticBody2D/PolyCollisionShape2D/Boundary")
+limit = 1
+delay = 2.0
+
+[node name="3" type="Spawner2D" parent="ExplosionSequence"]
+position = Vector2( 0, -70 )
+resource = ExtResource( 3 )
+spawn_path = NodePath("../../StaticBody2D/PolyCollisionShape2D/Boundary")
+limit = 1
+delay = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "motion"
+playback_speed = 0.5
+anims/motion = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[connection signal="finished" from="Spawner2D" to="." method="_on_spawner_finished"]
+[connection signal="node_spawned" from="Spawner2D" to="." method="_on_node_spawned"]
