@@ -18,4 +18,4 @@ func add_segment(from, to):
 
 
 func get_intersections():
-	return get_vertex_list()
+	return get_vertices()
