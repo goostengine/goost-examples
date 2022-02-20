@@ -35,7 +35,7 @@ func generate():
 		Debug2D.draw_line(e.a.value, e.b.value, v_color.darkened(0.6))
 
 	# Find tree
-	var root = Random.choice(graph.get_vertices())
+	var root = Random.pick(graph.get_vertices())
 	var tree = graph.shortest_path_tree(root)
 
 	Debug2D.draw_set_color(Color.cornflower)
@@ -44,7 +44,7 @@ func generate():
 
 	# Find arbitrary shortest path.
 	var shortest_path = []
-	var current = Random.choice(graph.get_vertices())
+	var current = Random.pick(graph.get_vertices())
 	while true:
 		shortest_path.append(current)
 		var previous = tree.backtrace[current]
